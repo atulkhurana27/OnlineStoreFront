@@ -29,9 +29,13 @@ To test the application run the following commands.
 		java -jar target/OnlineStoreFront-1.0.5.jar server example.yml
 
 
-CURLS :
+ CURLS :
+
+
  CREATE:
-1.curl -X POST \
+1.
+
+curl -X POST \
     http://localhost:9080/product/create \
     -H 'Accept: */*' \
     -H 'Accept-Encoding: gzip, deflate' \
@@ -63,7 +67,9 @@ CURLS :
   }
   '
 
-2.curl -X POST \
+2.
+
+curl -X POST \
     http://localhost:9080/product/create \
     -H 'Accept: */*' \
     -H 'Accept-Encoding: gzip, deflate' \
@@ -95,7 +101,9 @@ CURLS :
   }
   '
 
-  3.curl -X POST \
+  3.
+
+  curl -X POST \
       http://localhost:9080/product/create \
       -H 'Accept: */*' \
       -H 'Cache-Control: no-cache' \
@@ -127,7 +135,9 @@ CURLS :
     }
     '
 
-    4.curl -X POST \
+    4.
+
+    curl -X POST \
         http://localhost:9080/product/create \
         -H 'Accept: */*' \
         -H 'Cache-Control: no-cache' \
@@ -207,3 +217,92 @@ CURLS :
       }'
 
       DELETE :
+
+      curl -X DELETE \
+        http://localhost:9080/product/delete/2 \
+        -H 'Accept: */*' \
+        -H 'Accept-Encoding: gzip, deflate' \
+        -H 'Cache-Control: no-cache' \
+        -H 'Connection: keep-alive' \
+        -H 'Content-Length: ' \
+        -H 'Host: localhost:9080' \
+        -H 'Postman-Token: 899475ea-1386-43f8-b87b-efb004e1933f,e27e122c-369b-4788-b453-5ade8cbed931' \
+        -H 'User-Agent: PostmanRuntime/7.15.2' \
+        -H 'authentification_header: nadbku4543wa343j4bjbj4343bb3=' \
+        -H 'cache-control: no-cache'
+
+
+   SEARCH :
+
+   1.department
+
+
+   curl -X GET \
+     http://localhost:9080/product/search/department/Home1 \
+     -H 'Accept: */*' \
+     -H 'Accept-Encoding: gzip, deflate' \
+     -H 'Cache-Control: no-cache' \
+     -H 'Connection: keep-alive' \
+     -H 'Host: localhost:9080' \
+     -H 'Postman-Token: 03218202-d73b-4857-8095-3e4fac192e86,2e9ffab0-6ac3-46f1-89e4-37652b55436f' \
+     -H 'User-Agent: PostmanRuntime/7.15.2' \
+     -H 'authentification_header: nadbku4543wa343j4bjbj4343bb3=' \
+     -H 'cache-control: no-cache'
+
+    2.product_title
+
+    curl -X GET \
+      http://localhost:9080/product/search/productTitle/PORTTITOR \
+      -H 'Accept: */*' \
+      -H 'Accept-Encoding: gzip, deflate' \
+      -H 'Cache-Control: no-cache' \
+      -H 'Connection: keep-alive' \
+      -H 'Host: localhost:9080' \
+      -H 'Postman-Token: e9c60110-ff39-4ad4-baf6-a29e78640bee,6cd3724a-d6c6-472d-a6cc-cb4f0b13df7b' \
+      -H 'User-Agent: PostmanRuntime/7.15.2' \
+      -H 'authentification_header: nadbku4543wa343j4bjbj4343bb3=' \
+      -H 'cache-control: no-cache'
+
+
+
+    3.company
+
+    curl -X GET \
+      'http://localhost:9080/product/search/company/Huels,%20Hartmann%20and%20Koelpin' \
+      -H 'Accept: */*' \
+      -H 'Accept-Encoding: gzip, deflate' \
+      -H 'Cache-Control: no-cache' \
+      -H 'Connection: keep-alive' \
+      -H 'Host: localhost:9080' \
+      -H 'Postman-Token: f5676695-16e5-4af6-91f6-5102dffc1fe5,b3486462-08dc-48da-af96-2a320ae52277' \
+      -H 'User-Agent: PostmanRuntime/7.15.2' \
+      -H 'authentification_header: nadbku4543wa343j4bjbj4343bb3=' \
+      -H 'cache-control: no-cache'
+
+
+   Cart API – (/carts)
+
+   curl -X POST \
+     http://localhost:9080/carts \
+     -H 'Accept: */*' \
+     -H 'Accept-Encoding: gzip, deflate' \
+     -H 'Cache-Control: no-cache' \
+     -H 'Connection: keep-alive' \
+     -H 'Content-Length: 172' \
+     -H 'Content-Type: application/json' \
+     -H 'Host: localhost:9080' \
+     -H 'Postman-Token: 15f11e31-ce6f-4a7a-a547-a1124b3ff76e,6d40eb70-7cca-4441-adf4-61d43cd6db88' \
+     -H 'User-Agent: PostmanRuntime/7.15.2' \
+     -H 'cache-control: no-cache' \
+     -d '{
+     "item_list": [
+        {
+            "product_id":1,
+            "quantity":11
+         } ,
+         {
+            "product_id":3,
+            "quantity":4
+         }
+      ]
+   }'
