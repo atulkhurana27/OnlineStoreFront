@@ -1,4 +1,3 @@
-Employee REST API using Dropwizard 1.0.5
 
 Java 8 needed to run this code.
 

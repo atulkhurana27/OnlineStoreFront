@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.dropwizard.employee</groupId>
-  <artifactId>DropwizardEmployee</artifactId>
+  <groupId>com.OnlineStore</groupId>
+  <artifactId>OnlineStoreFront</artifactId>
   <packaging>jar</packaging>
   <version>1.0.5</version>
-  <name>DropwizardEmployee</name>
+  <name>OnlineStoreFront</name>
   <url>http://maven.apache.org</url>
 
   <dependencyManagement>

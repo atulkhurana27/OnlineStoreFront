@@ -13,11 +13,9 @@ import java.util.Map;
 
 public class OnlineStoreConfiguration extends Configuration {
 
-    @NotEmpty
-    private String template;
 
     @NotEmpty
-    private String defaultName = "Employee!";
+    private String defaultName = "Product!";
 
     @Valid
     @NotNull
@@ -25,16 +23,6 @@ public class OnlineStoreConfiguration extends Configuration {
 
     @NotNull
     private Map<String, Map<String, String>> viewRendererConfiguration = Collections.emptyMap();
-
-    @JsonProperty
-    public String getTemplate() {
-        return template;
-    }
-
-    @JsonProperty
-    public void setTemplate(String template) {
-        this.template = template;
-    }
 
     @JsonProperty
     public String getDefaultName() {
