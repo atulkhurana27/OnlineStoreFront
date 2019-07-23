@@ -15,7 +15,7 @@ Using Hibernate features for the database.
 
 # Running The Application
 
-To test the example application run the following commands.
+To test the application run the following commands.
 
 * To package the example run.
 
@@ -23,16 +23,11 @@ To test the example application run the following commands.
 
 * To setup the h2 database run.
 
-		java -jar target/DropwizardEmployee-1.0.5.jar db migrate example.yml
+		java -jar target/OnlineStoreFront-1.0.5.jar db migrate example.yml
 
 * To run the server run.
 
-		java -jar target/DropwizardEmployee-1.0.5.jar server example.yml
+		java -jar target/OnlineStoreFront-1.0.5.jar server example.yml
 
-* To post data into the application.
 
-	curl -H "Content-Type: application/json" -X POST -d '{"firstName":"Mayur", "lastName":"Chougule","jobTitle":"Software Engineer"}' http://localhost:8080/employee
 
-* To view the list of employees.
-
-	http://localhost:8080/employee
