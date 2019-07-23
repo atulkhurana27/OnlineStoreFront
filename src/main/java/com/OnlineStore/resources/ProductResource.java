@@ -29,7 +29,7 @@ public class ProductResource {
     @UnitOfWork
     @Path("/create")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response createEmployee(Product product)  throws  Exception{
+    public Response createProduct(Product product)  throws  Exception{
         product = productDAO.create(product);
         return Response.status(Response.Status.OK).entity(product).build();
     }
@@ -53,7 +53,7 @@ public class ProductResource {
     @UnitOfWork
     @Path("/update")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateEmployee(@HeaderParam("authentification_header") String authenHeader,Product product) throws  Exception {
+    public Response updateProduct(@HeaderParam("authentification_header") String authenHeader,Product product) throws  Exception {
         if(authenHeader.equalsIgnoreCase(Utils.AUTH_HEADER)) {
             product =  productDAO.update(product);
             return Response.status(Response.Status.OK).entity(product).build();
@@ -66,7 +66,7 @@ public class ProductResource {
     @DELETE
     @UnitOfWork
     @Path("/delete/{id}")
-    public Response deleteEmployee(@HeaderParam("authentification_header") String authenHeader,@PathParam("id") Long id) {
+    public Response deleteProduct(@HeaderParam("authentification_header") String authenHeader,@PathParam("id") Long id) {
         if(authenHeader.equalsIgnoreCase(Utils.AUTH_HEADER)) {
             productDAO.delete(id);
             return Response.status(Response.Status.OK).build();
