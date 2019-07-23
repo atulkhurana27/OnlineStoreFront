@@ -38,6 +38,7 @@ public class ProductDAO extends AbstractDAO<Product> {
     public void delete(Long id) {
         Product product = findById(id).get();
         if(product!=null){
+            product.setDepartment(null);
             currentSession().delete(product);
         }
     }
