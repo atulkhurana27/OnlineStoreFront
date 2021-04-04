@@ -22,11 +22,11 @@ To test the application run the following commands.
 
 * To setup the h2 database run.
 
-		java -jar target/OnlineStoreFront-1.0.5.jar db migrate example.yml
+		java -jar target/CabServicePortal-1.0.5.jar db migrate example.yml
 
 * To run the server run.
 
-		java -jar target/OnlineStoreFront-1.0.5.jar server example.yml
+		java -jar target/CabServicePortal-1.0.5.jar server example.yml
 
 
  CURLS :
