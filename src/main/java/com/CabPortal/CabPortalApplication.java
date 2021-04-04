@@ -1,6 +1,7 @@
 package com.CabPortal;
 
-import com.CabPortal.DAO.*;
+import com.CabPortal.DAO.DBHandler;
+import com.CabPortal.DAO1.*;
 import com.CabPortal.Entities1.*;
 import com.CabPortal.Services.AdminService;
 import com.CabPortal.Services.CabService;
@@ -63,15 +64,16 @@ public class CabPortalApplication extends Application<CabPortalConfiguration> {
     }
 
     public void run(CabPortalConfiguration CabPortalConfiguration, Environment environment) throws Exception {
-        final BookingDAO bookingDAO = new BookingDAO(hibernateBundle.getSessionFactory());
-        final CabDAO cabDAO = new CabDAO(hibernateBundle.getSessionFactory());
-        final CabLocationMappingDAO cabLocationMappingDAO = new CabLocationMappingDAO(hibernateBundle.getSessionFactory());
-        final CityDAO cityDAO = new CityDAO(hibernateBundle.getSessionFactory());
-        final TripDAO tripDAO = new TripDAO(hibernateBundle.getSessionFactory());
-        final UserDAO userDAO = new UserDAO(hibernateBundle.getSessionFactory());
-        final AdminService adminService = new AdminService();
-        final CabService cabService = new CabService();
-        final UserService userService = new UserService();
+//        final BookingDAO bookingDAO = new BookingDAO(hibernateBundle.getSessionFactory());
+//        final CabDAO cabDAO = new CabDAO(hibernateBundle.getSessionFactory());
+//        final CabLocationMappingDAO cabLocationMappingDAO = new CabLocationMappingDAO(hibernateBundle.getSessionFactory());
+//        final CityDAO cityDAO = new CityDAO(hibernateBundle.getSessionFactory());
+//        final TripDAO tripDAO = new TripDAO(hibernateBundle.getSessionFactory());
+//        final UserDAO userDAO = new UserDAO(hibernateBundle.getSessionFactory());
+        final DBHandler dbHandler=new DBHandler();
+        final AdminService adminService = new AdminService(dbHandler);
+        final CabService cabService = new CabService(dbHandler);
+        final UserService userService = new UserService(dbHandler);
         environment.jersey().register(new AdminResource(adminService));
         environment.jersey().register(new CabResource(cabService));
         environment.jersey().register(new UserResource(userService));

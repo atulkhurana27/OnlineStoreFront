@@ -1,4 +1,4 @@
-package com.CabPortal.DAO;
+package com.CabPortal.DAO1;
 
 import com.CabPortal.Entities1.City;
 import io.dropwizard.hibernate.AbstractDAO;
