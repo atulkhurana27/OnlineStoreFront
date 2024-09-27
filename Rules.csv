@@ -1,4 +1,0 @@
-Five_Items_Same_Department_Reduce_overall_cost_10_percent,DEPARTMENT,MINCOUNT,QUANTITY,PERCENTAGE,5,10
-More_than_ten_single_item_Reduce_overall_cost_10_percent,ITEM,PERCENTAGE,QUANTITY,MINCOUNT,10,10
-Total_Cost_Greater_Than_50,OVERALL,OVERALL,COST,PRICE,50,5
-Buy_one_get_second_50_percent_off,ITEM,COUNT,QUANTITY,PERCENTAGE,2,50
